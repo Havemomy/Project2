@@ -5,5 +5,15 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Project2.MainWindow"
         Title="Project2">
-    
+        <Grid>
+             <DataGrid Name="OrderGrid" x:CompileBindings="False">
+                 <DataGrid.Columns>
+                     <DataGridTextColumn Header="Id" Binding="{Binding Order_id}"></DataGridTextColumn>
+                     <DataGridTextColumn Header="Auto" Binding="{Binding Auto}"></DataGridTextColumn>
+                     <DataGridTextColumn Header="Cargo" Binding="{Binding Cargo}"></DataGridTextColumn>
+                     <DataGridTextColumn Header="Status" Binding="{Binding Status}"></DataGridTextColumn>
+                     <DataGridTextColumn Header="Client" Binding="{Binding Client}"></DataGridTextColumn>
+                 </DataGrid.Columns>
+             </DataGrid>   
+        </Grid>
 </Window>
