@@ -4,16 +4,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Project2.MainWindow"
-        Title="Project2">
-        <Grid>
-             <DataGrid Name="OrderGrid" x:CompileBindings="False">
+        Title="PJ2">
+        <DockPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                <Button Name="AddZakaz" Content="Добавить" Margin="5" Background="Bisque" Click="AddZakaz_OnClick"></Button>
+                <Button Name="RedZakaz" Content="Редактировать" Margin="5" Background="Bisque" Click="RedZakaz_OnClick"></Button>
+                <Button Name="DelZakaz" Content="Удалить" Margin="5" Background="Bisque" Click="DelZakaz_OnClick"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Button Name="Auto" Content="Авто" Margin="5" Width="85" HorizontalContentAlignment="Center" Background="Bisque" Click="ShowAuto_OnClick"></Button>
+                <Button Name="Tovar" Content="Товар" Margin="5" Width="85" Background="Bisque"  HorizontalContentAlignment="Center" Click="ShowTovar_OnClick"></Button>
+                <Button Name="Client" Content="Клиент" Margin="5" Width="85" Background="Bisque" HorizontalContentAlignment="Center" Click="ShowKlient_OnClick"></Button>
+            </StackPanel>
+             <DataGrid Name="OrderGrid" x:CompileBindings="False" Margin="10">
                  <DataGrid.Columns>
-                     <DataGridTextColumn Header="Id" Binding="{Binding Order_id}"></DataGridTextColumn>
+                     <DataGridTextColumn Header="Id" Binding="{Binding ZakazID}"></DataGridTextColumn>
                      <DataGridTextColumn Header="Auto" Binding="{Binding Auto}"></DataGridTextColumn>
-                     <DataGridTextColumn Header="Cargo" Binding="{Binding Cargo}"></DataGridTextColumn>
+                     <DataGridTextColumn Header="Cargo" Binding="{Binding Gruz}"></DataGridTextColumn>
                      <DataGridTextColumn Header="Status" Binding="{Binding Status}"></DataGridTextColumn>
                      <DataGridTextColumn Header="Client" Binding="{Binding Client}"></DataGridTextColumn>
                  </DataGrid.Columns>
-             </DataGrid>   
-        </Grid>
+             </DataGrid>
+        </DockPanel>
 </Window>

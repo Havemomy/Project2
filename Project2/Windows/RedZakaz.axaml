@@ -1,0 +1,15 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Project2.Windows.RedZakaz"
+        Title="Редактирование">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock >Клиент</TextBlock>
+        <TextBox Name="NameTextBox" Width="150" Margin="5"></TextBox>
+        <TextBlock>Статус заказа</TextBlock>
+        <ComboBox Name="ZakazStatus" Width="150" HorizontalAlignment="Center"></ComboBox>
+        
+    </StackPanel>
+</Window>
