@@ -19,4 +19,28 @@
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2"/>
         <PackageReference Include="MySql.Data" Version="8.2.0" />
     </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Client\ClientWndw.axaml.cs">
+        <DependentUpon>ClientWndw.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Auto\AutoWnd.axaml.cs">
+        <DependentUpon>Auto.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Zakaz\AddZakaz.axaml.cs">
+        <DependentUpon>AddZakaz.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Zakaz\RedZakaz.axaml.cs">
+        <DependentUpon>RedZakaz.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Gruz\TovarWndw.axaml.cs">
+        <DependentUpon>Tovar.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>
