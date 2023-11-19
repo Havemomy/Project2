@@ -1,0 +1,20 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Project2.Windows.AddZakaz"
+        Title="Добавление">
+        <StackPanel>
+                <TextBlock HorizontalAlignment="Center">Клиент</TextBlock>
+                <TextBox Name="ClientTextBox" Width="150"/>
+                <TextBlock HorizontalAlignment="Center">Авто</TextBlock>
+                <TextBox Name="AutoTextBox" Width="150"/>
+                <TextBlock HorizontalAlignment="Center">Груз</TextBlock>
+                <TextBox Name="GruzTextBox" Width="150"/>
+                <TextBlock HorizontalAlignment="Center">Статус заявки</TextBlock>
+                <ComboBox Name="StatusTextBlock" Width="150" HorizontalAlignment="Center"/>
+                <Button Content="Добавить заказ" HorizontalAlignment="Center" Margin="0 10 0 0"  Background="Lavender"/>
+                <Button Content="На главную" HorizontalAlignment="Center" Margin="0 10 0 0" Click="BackOnClick" Background="Lavender"/>
+        </StackPanel>
+</Window>
