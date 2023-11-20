@@ -18,6 +18,8 @@ public partial class AutoWnd : Window
     {
         InitializeComponent();
         Showtable();
+        Width = 400;
+        Height = 300;
     }
 
     public void Showtable()
@@ -43,6 +45,16 @@ public partial class AutoWnd : Window
         AutoGrid.ItemsSource = _autos;
     }
 
+    private void Delete(int id)
+    {
+        _connection.Open();
+        string sql = " delete from Auto where AutoID = @id";
+        MySqlCommand command = new MySqlCommand(sql, _connection);
+        command.Parameters.AddWithValue("@id", id);
+        command.ExecuteNonQuery();
+        _connection.Close();
+    }
+
     private void Back_OnClick(object? sender, RoutedEventArgs e)
     {
         MainWindow mainWindow = new MainWindow();
@@ -54,5 +66,15 @@ public partial class AutoWnd : Window
     {
         AddAutoWndw addAutoWndw = new AddAutoWndw();
         addAutoWndw.Show();
+    }
+
+    private void DelAuto_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Delete((AutoGrid.SelectedItem as Models.Auto).AutoID);
+    }
+
+    private void RedAuto_OnClick(object? sender, RoutedEventArgs e)
+    {
+        
     }
 }

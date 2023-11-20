@@ -7,15 +7,15 @@
         Title="Tovar">
         <DockPanel>
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
-                        <Button Name="AddTovar" Content="Добавить" Margin="5" Background="Bisque" ></Button>
+                        <Button Name="AddTovar" Content="Добавить" Margin="5" Background="Bisque" Click="AddTovar_OnClick" ></Button>
                         <Button Name="RedTovar" Content="Редактировать" Margin="5" Background="Bisque" ></Button>
-                        <Button Name="DelTovar" Content="Удалить" Margin="5" Background="Bisque" ></Button>
+                        <Button Name="DelTovar" Content="Удалить" Margin="5" Background="Bisque" Click="DelTovar_OnClick"></Button>
                         <Button Name ="Back" Content="Назад" Margin="5" Background="Bisque" Click="Back_OnClick"></Button>
                 </StackPanel>
                 <DataGrid Name="TovarGrid" x:CompileBindings="False" Margin="10">
                         <DataGrid.Columns>
                                 <DataGridTextColumn Header="Id" Binding="{Binding GruzID}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Номер" Binding="{Binding Count}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Количество(Тонны)" Binding="{Binding Count}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Марка" Binding="{Binding Name}"></DataGridTextColumn>
                         </DataGrid.Columns>
                 </DataGrid>

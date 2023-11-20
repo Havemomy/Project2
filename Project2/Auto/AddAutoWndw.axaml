@@ -11,7 +11,7 @@
                 <TextBlock Text="Номер" HorizontalAlignment="Center" FontWeight="DemiBold"/>
                 <TextBox Width="150" Name="NomerTxt"/>
                 <TextBlock Text="Расход" HorizontalAlignment="Center" FontWeight="DemiBold"/>
-                <TextBox Width="150" Name="RashodTxt"/>
+                <NumericUpDown ShowButtonSpinner="False" Increment="0.01" Minimum="0" Width="150" Name="RashodTxt"/>
                 <Button Name="AddBtn" Content="Добавить" Background="Lavender" HorizontalAlignment="Center" Margin="0 5 0 0" Click="AddBtn_OnClick" />
         </StackPanel>
 </Window>

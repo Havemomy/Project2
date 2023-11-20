@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Data;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using MySql.Data.MySqlClient;
+using Project2.Gruz;
 using Project2.Models;
 
 namespace Project2.Windows;
@@ -18,11 +16,13 @@ public partial class TovarWndw : Window
     {
         InitializeComponent();
         Showtable();
+        Width = 400;
+        Height = 300;
     }
 
     public void Showtable()
     {
-        string sql = " select GruzID, Count, Name, from sql12661858.Gruz";
+        string sql = " select GruzID, Kolichestvo, Name from Gruz";
         _tovars = new List<Tovar>();
         _connection = new MySqlConnection(_connString);
         _connection.Open();
@@ -34,12 +34,22 @@ public partial class TovarWndw : Window
             {
                 GruzID = reader.GetInt32(column:"GruzID"),
                 Name = reader.GetString(column:"Name"),
-                Count = reader.GetInt32(column:"Count")
+                Count = reader.GetInt32(column:"Kolichestvo")
             };
             _tovars.Add(currentGruz);
         }
         _connection.Close();
         TovarGrid.ItemsSource = _tovars;
+    }
+    private void Delete(int id)
+    {
+        _connection.Open();
+        string sql = " delete from Gruz where GruzID = @id";
+        MySqlCommand command = new MySqlCommand(sql, _connection);
+        command.Parameters.AddWithValue("@id", id);
+        command.ExecuteNonQuery();
+        _connection.Close();
+        Showtable();
     }
 
     private void Back_OnClick(object? sender, RoutedEventArgs e)
@@ -47,5 +57,17 @@ public partial class TovarWndw : Window
         MainWindow mainWindow = new MainWindow();
         this.Hide();
         mainWindow.Show();
+    }
+
+    private void AddTovar_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AddTovarWndw addTovarWndw = new AddTovarWndw();
+        addTovarWndw.Show(owner:this);
+    }
+
+    private void DelTovar_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Delete((TovarGrid.SelectedItem as Models.Tovar).GruzID);
+        
     }
 }

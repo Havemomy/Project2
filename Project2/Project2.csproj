@@ -43,4 +43,13 @@
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
+
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Windows\AddZakaz.axaml" />
+      <UpToDateCheckInput Remove="Windows\Auto.axaml" />
+      <UpToDateCheckInput Remove="Windows\Client.axaml" />
+      <UpToDateCheckInput Remove="Windows\RedZakaz.axaml" />
+      <UpToDateCheckInput Remove="Windows\Tovar.axaml" />
+    </ItemGroup>
 </Project>
